@@ -468,10 +468,11 @@ class CompiledPass extends MaterialPassBase
 	{
 		super.dispose();
 		if (_methodSetup != null)
+		{
 			_methodSetup.removeEventListener(ShadingMethodEvent.SHADER_INVALIDATED, onShaderInvalidated);
-
-		_methodSetup.dispose();
-		_methodSetup = null;
+			_methodSetup.dispose();
+			_methodSetup = null;
+		}
 	}
 	
 	/**
