@@ -467,7 +467,9 @@ class CompiledPass extends MaterialPassBase
 	override public function dispose():Void
 	{
 		super.dispose();
-		_methodSetup.removeEventListener(ShadingMethodEvent.SHADER_INVALIDATED, onShaderInvalidated);
+		if (_methodSetup != null)
+			_methodSetup.removeEventListener(ShadingMethodEvent.SHADER_INVALIDATED, onShaderInvalidated);
+
 		_methodSetup.dispose();
 		_methodSetup = null;
 	}
